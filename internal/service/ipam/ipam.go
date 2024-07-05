@@ -95,6 +95,7 @@ func (h *Helper) ReconcileIPAddresses(ctx context.Context, machineScope *scope.M
 	return requeue, nil
 }
 
+// ReconcileIPAddressClaimsDeletion removes finalizers from IPAddressClaims.
 func (h *Helper) ReconcileIPAddressClaimsDeletion(ctx context.Context, machineScope *scope.Machine) (err error) {
 	log := h.logger.WithName("reconcileIPAddressClaimsDeletion")
 	log.V(4).Info("removing finalizers from IPAddressClaims.")
